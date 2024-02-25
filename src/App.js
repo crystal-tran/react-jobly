@@ -26,7 +26,6 @@ function App() {
   });
   // const [token, setToken] = useState(localStorage.getItem("_token"));
 
-  const [applications, setApplications] = useState([]);
   const token = localStorage.getItem("_token");
   console.log("user:", user, "token", token);
 

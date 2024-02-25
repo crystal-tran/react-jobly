@@ -64,57 +64,64 @@ function RegisterForm({ initialData = DEFAULT_INITIAL_DATA, register}) {
 //TODO: have labels in their own div and inputs to their own div
 //TODO: further study: can make a component that handles errors
   return (
-    <div className="RegisterForm">
-      <h1>Sign Up</h1>
-      <div className="RegisterForm-container">
+    <div className="RegisterForm container">
+      <div className="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card border-0 shadow rounded-3 my-5">
+          <div class="card-body p-4 p-sm-5">
+            <h5 class="card-title text-center mb-3 fw-light fs-5">Register Today</h5>
+              <p>Fill in the data below.</p>
         <form className="RegisterForm-form" onSubmit={handleSubmit}>
-          <div>
-            <label htmlFor="register-username">Username</label>
+          <div className="form-floating mb-3">
             <input
               id="register-username"
+              className="form-control"
               name="username"
               value={formData.username}
               onChange={handleChange}
+              placeholder="Username"
             />
           </div>
-          <div>
-            <label htmlFor="register-password">Password</label>
+          <div className="form-floating mb-3">
             <input
               id="register-password"
+              className="form-control"
               name="password"
               type="password"
               value={formData.password}
               onChange={handleChange}
+              placeholder='Password'
             />
           </div>
 
-          <div>
-            <label htmlFor="register-fn">First name</label>
+          <div className="form-floating mb-3">
             <input
               id="register-fn"
+              className="form-control"
               name="firstName"
               value={formData.firstName}
               onChange={handleChange}
+              placeholder="First Name"
             />
           </div>
 
-          <div>
-            <label htmlFor="register-ln">Last name</label>
+          <div className="form-floating mb-3">
             <input
-              id="register-ln"
+              className="form-control"
               name="lastName"
               value={formData.lastName}
               onChange={handleChange}
+              placeholder="Last Name"
             />
           </div>
 
-          <div>
-            <label htmlFor="register-email">Email</label>
+          <div className="form-floating mb-3">
             <input
-              id="register-email"
+              className="form-control"
               name="email"
               value={formData.email}
               onChange={handleChange}
+              placeholder="Email"
             />
           </div>
 
@@ -123,10 +130,13 @@ function RegisterForm({ initialData = DEFAULT_INITIAL_DATA, register}) {
               {errorMsg.map((e, i) => <p key={i} >{e}</p>)}
             </div>
           }
-          <button className="RegisterForm-button">
+          <button className="RegisterForm-button btn btn-primary">
             Submit
           </button>
         </form>
+      </div>
+          </div>
+        </div>
       </div>
     </div>
   );

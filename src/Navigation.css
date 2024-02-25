@@ -1,8 +1,9 @@
 nav a {
   display: inline-block;
-  width: 100px;
-  padding: 10px 0;
+  padding: 10px 50px;
   text-decoration: none;
+  color: rgb(198, 222, 255);
+  text-transform: uppercase;
 }
 
 nav a.active {
@@ -10,5 +11,10 @@ nav a.active {
 }
 
 nav a:hover{
-  color: blue;
+  color: white;
+  text-decoration: none;
+}
+
+nav {
+  background-color: rgba(18,71,125);
 }

@@ -1,8 +1,24 @@
-.Homepage-btn {
-
-  color: white;
-  background-color: blue;
-  padding: 5px 15px;
-  margin: 5px 15px;
-  text-decoration: none;
+.Homepage-greeting {
+  text-shadow: none;
+  background-color: rgba(21, 97, 219, 0.571);
+  max-width: fit-content;
+  margin: 30px auto;
+  padding: 15px 15px;
+  border-radius: 18px;
+  -webkit-box-shadow: 10px 10px 7px -4px rgba(42, 29, 101, 0.54);
+  -moz-box-shadow: 10px 10px 7px -4px rgba(42, 29, 101, 0.54);
+  box-shadow: 10px 10px 7px -4px rgba(42, 29, 101, 0.54);
 }
+
+.Homepage {
+  padding: 9em;
+  color: white;
+  text-shadow: 1px 1px 2px rgb(55, 56, 61);
+}
+
+
+.Homepage-btn {
+  margin: 10px 10px;
+}
+
+

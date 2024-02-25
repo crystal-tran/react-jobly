@@ -60,27 +60,33 @@ function LoginForm({ initialData = DEFAULT_INITIAL_DATA, login}) {
 //TODO: wrap labels and inputs in separate divs
 //TODO: further study, have a separate error component
   return (
-    <div className="LoginForm">
-      <h1>Log In</h1>
-      <div className="LoginForm-container">
+    <div className="LoginForm container">
+      <div className="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card border-0 shadow rounded-3 my-5">
+        <div class="card-body p-4 p-sm-5">
+            <h5 class="card-title text-center mb-5 fw-light fs-5">Sign In</h5>
         <form className="LoginForm-form" onSubmit={handleSubmit}>
-          <div>
-            <label htmlFor="login-username">Username</label>
+        <div class="form-floating mb-3">
             <input
               id="login-username"
+              className="form-control"
               name="username"
               value={formData.username}
               onChange={handleChange}
+              placeholder="Username"
             />
           </div>
-          <div>
-            <label htmlFor="login-password">Password</label>
+          <div class="form-floating mb-3">
+
             <input
               id="login-password"
+              className="form-control"
               name="password"
               type="password"
               value={formData.password}
               onChange={handleChange}
+              placeholder='Password'
             />
           </div>
 
@@ -89,11 +95,14 @@ function LoginForm({ initialData = DEFAULT_INITIAL_DATA, login}) {
               <p className="LoginForm-error-ms" >Invalid username/password</p>
             </div>
           }
-          <button className="LoginForm-button">
+          <button className="LoginForm-button btn btn-primary">
             Submit
           </button>
         </form>
       </div>
+    </div>
+    </div>
+    </div>
     </div>
   );
 };

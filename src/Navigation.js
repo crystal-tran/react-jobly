@@ -23,7 +23,7 @@ import './Navigation.css';
 function Navigation({ logout, user }) {
   return (
     user
-      ? <nav className="Navigation">
+      ? <nav className="Navigation navbar">
         <NavLink to="/" end>Jobly</NavLink>
         <NavLink to="/companies" end>Companies</NavLink>
         <NavLink to="/jobs" end>Jobs</NavLink>
@@ -35,7 +35,7 @@ function Navigation({ logout, user }) {
           Log out {user.username}
         </NavLink>
       </nav>
-      : <nav className="Navigation">
+      : <nav className="Navigation navbar">
         <NavLink to="/" end>Jobly</NavLink>
         <NavLink to="/login" end>Login</NavLink>
         <NavLink to="/register" end>Sign Up</NavLink>

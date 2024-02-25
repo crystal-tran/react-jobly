@@ -15,16 +15,18 @@ import "./Homepage.css"
 
 function Homepage(){
   const user = useContext(userContext);
-  console.log("Homepage", "user= ", user)
+
   return(
     <div className="Homepage">
       <h1 className="Homepage-title">Jobly</h1>
       <h2 >All the jobs in one, convenient place.</h2>
       { user.userData
-        ? <p>Welcome back, {user.userData.firstName}</p>
+        ? <p className="Homepage-greeting">
+          Welcome back, {user.userData.firstName}
+          </p>
         : <div>
-            <Link to='/login' className="Homepage-btn">Log in</Link>
-            <Link to='/register' className="Homepage-btn">Sign up</Link>
+            <Link to='/login' className="Homepage-btn btn btn-primary">Log in</Link>
+            <Link to='/register' className="Homepage-btn btn btn-primary">Sign up</Link>
           </div>
       }
     </div>
