@@ -59,40 +59,49 @@ function EditProfileForm({ user, editProfile}) {
   }
 
   return (
-    <div className="EditProfileForm">
+    <div className="EditProfileForm container">
+     <div className="row">
+     <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card border-0 shadow rounded-3 my-5">
+        <div class="card-body p-4 p-sm-5">
+        <h5 class="card-title text-left-align mb-3 fw-light fs-5">Edit Profile</h5>
       <form className="EditProfileForm-form" onSubmit={handleSubmit}>
-        <div>
+        <div class="form-floating mb-3">
         <label htmlFor="EditProfile-username">Username</label>
         <input
           id="EditProfile-username"
+          className="form-control"
           name="username"
           placeholder={formData.username}
           onChange={handleChange}
           disabled
         />
         </div>
-        <div>
+        <div class="form-floating mb-3">
         <label htmlFor="EditProfile-fn">First name</label>
         <input
           id="EditProfile-fn"
+          className="form-control"
           name="firstName"
           value={formData.firstName}
           onChange={handleChange}
         />
         </div>
-        <div>
+        <div class="form-floating mb-3">
         <label htmlFor="EditProfile-ln">Last name</label>
         <input
           id="EditProfile-ln"
+          className="form-control"
           name="lastName"
           value={formData.lastName}
           onChange={handleChange}
         />
         </div>
-        <div>
+        <div class="form-floating mb-3">
         <label htmlFor="EditProfile-email">Email</label>
         <input
           id="EditProfile-email"
+          className="form-control"
           name="email"
           value={formData.email}
           onChange={handleChange}
@@ -110,10 +119,14 @@ function EditProfileForm({ user, editProfile}) {
             {errorMsg.map((e, i) => <p key={i} >{e}</p>)}
           </div>
         }
-        <button className="EditProfileForm-button">
+        <button className="EditProfileForm-button btn btn-primary">
           Submit
         </button>
       </form>
+    </div>
+    </div>
+    </div>
+    </div>
     </div>
   );
 };

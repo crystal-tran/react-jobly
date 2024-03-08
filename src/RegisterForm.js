@@ -130,7 +130,7 @@ function RegisterForm({ initialData = DEFAULT_INITIAL_DATA, register}) {
               {errorMsg.map((e, i) => <p key={i} >{e}</p>)}
             </div>
           }
-          <button className="RegisterForm-button btn btn-primary">
+          <button className="RegisterForm-btn btn">
             Submit
           </button>
         </form>

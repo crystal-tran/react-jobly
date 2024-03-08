@@ -42,7 +42,7 @@ function JobList () {
   if(jobs.isLoading) return <p>Loading... </p>;
 
   return (
-    <div>
+    <div className='container'>
       <SearchForm search={searchJobs} term={term}/>
       {jobs.data.length === 0
       ? <p>Sorry, no results were found!</p>

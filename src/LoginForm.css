@@ -1,6 +1,18 @@
+.LoginForm {
+  color: rgb(49,30,134);
+}
+
 .LoginForm-error {
-  border: 1px solid red;
-  border-radius: 10px;
   color: darkred;
 }
 
+.LoginForm-btn {
+  margin: 10px 10px;
+  color: rgb(244, 225, 255);
+  background-color: rgb(49,30,134);
+}
+
+.LoginForm-btn:hover {
+  color:rgb(192, 125, 255);
+
+}

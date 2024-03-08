@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Navigate} from 'react-router-dom';
 import JobCardList from './JobCardList';
 import JoblyApi from './api';
+import "./CompanyDetail.css";
 
 
 /**
@@ -30,7 +31,7 @@ function CompanyDetail() {
   const [company, setCompany] = useState({ data: null, isLoading: true});
   const { handle } = useParams();
 
-  console.log("Company Detail", company, "handle:", handle);
+  // console.log("Company Detail", company, "handle:", handle);
 
   useEffect(function fetchCompanyWhenMounted() {
     console.log("fetchCompanyWhenMounted is running")
@@ -52,12 +53,14 @@ function CompanyDetail() {
   if (company.isLoading) return <p>Loading...</p>;
 
   return (
-    <div className="CompanyDetail">
+    <div className="CompanyDetail container mt-4">
       {company.data === null
         ? <p>Sorry, company not found: {handle} </p>
         : <div>
-          <h1>({handle}) {company.data.name}</h1>
-          <p>{company.data.description}</p>
+          <h4 className="CompanyDetail-title">{company.data.name}</h4>
+          <p className="CompanyDetail-description mb-3">
+            {company.data.description}
+          </p>
           <JobCardList jobsData={company.data.jobs} />
         </div>
       }

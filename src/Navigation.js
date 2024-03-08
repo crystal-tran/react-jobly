@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import './Navigation.css';
 
+
 /** Displays navigatioal links depending on if user is logged in.
  *
  * Props:
@@ -22,24 +23,51 @@ import './Navigation.css';
 
 function Navigation({ logout, user }) {
   return (
-    user
-      ? <nav className="Navigation navbar">
-        <NavLink to="/" end>Jobly</NavLink>
-        <NavLink to="/companies" end>Companies</NavLink>
-        <NavLink to="/jobs" end>Jobs</NavLink>
-        <NavLink to="/profile" end>Profile</NavLink>
-        <NavLink
-          to="/"
-          onClick={logout}
-          end>
-          Log out {user.username}
-        </NavLink>
-      </nav>
-      : <nav className="Navigation navbar">
-        <NavLink to="/" end>Jobly</NavLink>
-        <NavLink to="/login" end>Login</NavLink>
-        <NavLink to="/register" end>Sign Up</NavLink>
-      </nav>
+       <nav className="navbar navbar-expand-lg  navbar-dark">
+      <NavLink to="/" className="navbar-brand">Jobly</NavLink>
+
+      <button class="navbar-toggler"
+              type="button"
+              data-toggle="data-bs-toggle"
+              data-target="data-bs-target"
+              aria-controls="navbarNavDropdown"
+              aria-expanded="false"
+              aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+      <div className="collapse navbar-collapse" id="navbarNav">
+        <ul className="navbar-nav ml-auto">
+          {user ? (
+            <>
+              <li className="nav-item">
+                <NavLink to="/companies" className="nav-link">Companies</NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink to="/jobs" className="nav-link">Jobs</NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink to="/profile" className="nav-link">Profile</NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink to="/" onClick={logout} className="nav-link">
+                  Log out {user.username}
+                </NavLink>
+              </li>
+            </>
+          ) : (
+            <>
+              <li className="nav-item">
+                <NavLink to="/login" className="nav-link">Login</NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink to="/register" className="nav-link">Sign Up</NavLink>
+              </li>
+            </>
+          )}
+        </ul>
+      </div>
+    </nav>
 
     /* <NavLink to="/companies/baker-santos" end>Baker-Santos</NavLink> */
     /* Above link helps demonstrate potential for subtle bug on CompanyDetails

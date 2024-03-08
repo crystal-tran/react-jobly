@@ -1,0 +1,11 @@
+.CompanyDetail-title {
+  color: rgb(244, 225, 255);
+  text-shadow: 3px 1px 0px rgb(49,30,134);
+}
+
+.CompanyDetail-description {
+  color: rgb(255, 255, 255);
+  background: rgb(49,30,134, .5);
+  padding: 0.5em;
+  border-radius: 5px;
+}

@@ -25,8 +25,8 @@ function Homepage(){
           Welcome back, {user.userData.firstName}
           </p>
         : <div>
-            <Link to='/login' className="Homepage-btn btn btn-primary">Log in</Link>
-            <Link to='/register' className="Homepage-btn btn btn-primary">Sign up</Link>
+            <Link to='/login' className="Homepage-btn btn">Log in</Link>
+            <Link to='/register' className="Homepage-btn btn">Sign up</Link>
           </div>
       }
     </div>

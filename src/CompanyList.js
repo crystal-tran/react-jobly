@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import CompanyCard from './CompanyCard';
 import SearchForm from './SearchForm';
 import JoblyApi from './api';
+import "./CompanyList.css";
 
 /**
  * CompanyList component displays search bar and list of company cards
@@ -43,7 +44,7 @@ function CompanyList() {
   if (companies.isLoading) return <p>Loading...</p>;
 
   return (
-    <div className="CompanyList-body">
+    <div className="CompanyList-body container">
       <SearchForm term={term} search={searchCompanies} />
       {companies.data.length === 0
         ? <p>Sorry, no results were found!</p>

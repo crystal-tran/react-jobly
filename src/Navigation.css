@@ -2,7 +2,6 @@ nav a {
   display: inline-block;
   padding: 10px 50px;
   text-decoration: none;
-  color: rgb(198, 222, 255);
   text-transform: uppercase;
 }
 
@@ -16,5 +15,5 @@ nav a:hover{
 }
 
 nav {
-  background-color: rgba(18,71,125);
+  background-color: rgb(49,30,134);
 }

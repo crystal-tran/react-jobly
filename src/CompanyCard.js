@@ -20,6 +20,7 @@ function CompanyCard({ companyData }) {
 
   return (
     <div className="CompanyCard">
+      <div className='card-body'>
       <Link to={`/companies/${companyData.handle}`}>
         <h5 className="CompanyCard-name">{companyData.name}</h5>
         <p className="CompanyCard-description">{companyData.description}</p>
@@ -31,7 +32,8 @@ function CompanyCard({ companyData }) {
             alt={`${companyData.name} logo`}></img>
         }
       </Link>
-    </div>
+      </div>
+      </div>
   );
 };
 

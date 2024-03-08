@@ -1,11 +1,16 @@
 .EditProfileForm-error {
-  border: 1px solid red;
-  border-radius: 10px;
   color: darkred;
 }
 
 .EditProfileForm-success {
-  border: 1px solid green;
-  border-radius: 10px;
-  color: lightgreen;
+  color: rgb(10, 126, 10);
 }
+
+EditProfileForm label {
+  text-align: left;
+}
+
+.EditProfileForm {
+  color: rgb(49,30,134);
+}
+
