@@ -26,26 +26,29 @@ function App() {
   });
   // const [token, setToken] = useState(localStorage.getItem("_token"));
 
+  const [applications, setApplications] = useState([]);
   const token = localStorage.getItem("_token");
   console.log("user:", user, "token", token);
 
   /**Get user data and set userData to userResult
    *  and isLoading to false if token exists */
 
-  useEffect(function fetchUserDataWhenTokenChanges() {
-    console.log("fetchUserDataWhenTokenChanges");
+  useEffect(function loadUserInfo() {
+    console.log("loadUserInfo");
+
     async function fetchUserData() {
-      const userPayload = jwtDecode(token);
-      JoblyApi.token = token;
-      const userResult = await JoblyApi.getUser(userPayload.username);
-      console.log("userResult is:", userResult);
-      setUser({
-        userData: userResult,
-        isLoading: false,
-      });
+      if(token){
+        let { username } = jwtDecode(token)
+        JoblyApi.token = token;
+        const userResult = await JoblyApi.getUser(username);
+        setUser({
+          userData: userResult,
+          isLoading: false,
+        });
+      }
     }
-    if (token) fetchUserData();
-  }, []);
+    fetchUserData();
+  }, [token]);
 
   /**
    * loginUser function will take in an object with properties 'username' and
