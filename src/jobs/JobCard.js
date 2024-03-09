@@ -14,8 +14,8 @@ import './JobCard.css'
  */
 
 function JobCard({ jobData }) {
-  // console.log("JobCard", "jobData= ", jobData);
   const {title, companyName, salary, equity} = jobData
+
   return (
     <div className="JobCard container col-10 mb-3">
       <div className='card-body'>

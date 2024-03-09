@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import SearchForm from './SearchForm';
+import SearchForm from '../common/SearchForm.js';
 import JobCardList from './JobCardList';
-import JoblyApi from './api';
+import JoblyApi from '../api/api';
 
 /**
  * JobList renders a search bar and a list of job cards

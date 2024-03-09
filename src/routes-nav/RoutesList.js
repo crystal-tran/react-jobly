@@ -1,12 +1,12 @@
 import React from "react";
 import { Routes, Route, Navigate } from 'react-router-dom';
-import Homepage from "./Homepage";
-import CompanyList from "./CompanyList";
-import JobList from "./JobList";
-import CompanyDetail from "./CompanyDetail";
-import EditProfileForm from './EditProfileForm.js';
-import LoginForm from './LoginForm.js';
-import RegisterForm from './RegisterForm.js';
+import Homepage from "../homepage/Homepage.js";
+import CompanyList from "../companies/CompanyList.js";
+import JobList from "../jobs/JobList.js";
+import CompanyDetail from "../companies/CompanyDetail.js";
+import EditProfileForm from '../user/EditProfileForm.js';
+import LoginForm from '../auth/LoginForm.js';
+import RegisterForm from '../auth/RegisterForm.js';
 
 /** Routes to pages on Jobly app depending on user log in,
  * shows different components
