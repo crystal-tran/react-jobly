@@ -19,7 +19,7 @@ function CompanyCard({ companyData }) {
   // console.log("CompanyCard", "copmanyData= ", companyData);
 
   return (
-    <div className="CompanyCard">
+    <div className="CompanyCard container col-10 mb-3">
       <div className='card-body'>
       <Link to={`/companies/${companyData.handle}`}>
         <h5 className="CompanyCard-name">{companyData.name}</h5>
