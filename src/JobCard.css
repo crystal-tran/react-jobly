@@ -1,6 +1,6 @@
 .JobCard {
   text-align:left;
   margin-bottom: 20px;
-  background-color: white;
+  background-color: rgb(255, 255, 255, 0.9);
   border-radius: 5px;
 }
