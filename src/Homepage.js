@@ -22,7 +22,7 @@ function Homepage(){
       <h2 >All the jobs in one, convenient place.</h2>
       { user.userData
         ? <p className="Homepage-greeting">
-          Welcome back, {user.userData.firstName}
+          Welcome back, {user.userData.firstName} 👋
           </p>
         : <div>
             <Link to='/login' className="Homepage-btn btn">Log in</Link>

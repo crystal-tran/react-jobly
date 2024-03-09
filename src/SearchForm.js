@@ -38,9 +38,7 @@ function SearchForm({ term, search }) {
   }
 
   return (
-    <div className="container mt-4">
-      <div className="row justify-content-md-center">
-        <div className="col-md-8 mb-3">
+        <div className="container col-md-10 mb-5 mt-4">
           <form className="SearchForm-form" onSubmit={handleSubmit}>
             <div className="input-group">
               <input
@@ -57,8 +55,6 @@ function SearchForm({ term, search }) {
             </div>
           </form>
         </div>
-      </div>
-    </div>
   );
 };
 
