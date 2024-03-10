@@ -10,7 +10,7 @@
 <h1 align="center">Jobly 💼 </h1>
 
   <p align="center">
-    Centralize your job search experience with a user-friendly platform, bringing all the jobs together in one convenient place.
+    Centralize your job search experience with a user-friendly platform.
     <br />
     <br />
     <a href="https://jobly.crystaltran.dev/">View Demo</a>
