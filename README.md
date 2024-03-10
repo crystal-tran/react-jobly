@@ -61,11 +61,11 @@ A job board web application where users can register, log in, manage their profi
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Features
-* User authentication and authorization via token
+* User authentication and authorization via JWT tokens
 * Search for jobs by keyword or company name
 * View job details, including salary and equity
 * Apply to jobs
-* View job application history
+* Personalized homepage
 
 
 ## Component Hierarchy Design
