@@ -132,8 +132,8 @@ To get a local copy up and running follow these steps.
 ## Acknowledgments
 
 * [Rithm School](https://github.com/rithmschool)
-* [Nick Orsi](https://github.com/nickorsi) : Frontend Contributor
-* [Veronica Ni](https://github.com/veronicani) : Backend Contributor
+* [Nick Orsi](https://github.com/nickorsi) : Frontend Co-author
+* [Veronica Ni](https://github.com/veronicani) : Backend Co-author
 * [Best-README-Template](https://github.com/othneildrew/Best-README-Template)
 * [Markdown-Badges](https://github.com/Ileriayo/markdown-badges)
 
