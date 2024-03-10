@@ -16,10 +16,14 @@
     <a href="https://jobly.crystaltran.dev/">View Demo</a>
     ·
     <a href="https://github.com/crystal-tran/express-jobly">Backend Repo</a>
+    <br />
+    <br />
+     <p>username: <b>guest</b> | demo password: <b>password</b></p>
+    <img src="https://github.com/crystal-tran/personal-portfolio-website/blob/main/static/media/jobly-demo-gif.gif" alt="jobly-demo">
+
+   
   </p>
 </div>
-
-
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -49,22 +53,33 @@
 
 <!-- ABOUT THE PROJECT -->
 
-  <h1 align="left">Jobly</h1>
+  <h1 align="left">About the Project</h1>
 <!--   <p align="left">
     <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
   </p> -->
-A job board web application where users can register, log in, manage their profile, search and apply for jobs. Companies can also post new jobs. This project was built in January 2024 during a 4-day sprint at <a href="https://github.com/rithmschool">Rithm School</a>. 
-
-
+Jobly is a full-stack application where users can register, manage their profile, browse and search hiring companies and jobs, as well as apply to jobs. This project was built in January 2024 during a 4-day sprint at <a href="https://github.com/rithmschool">Rithm School</a>. 
+<br />
+<br />
+Application was built with a React frontend, Express backend, and Postgres database. Express backend implemented with test-driven development (TDD). Frontend and backend hosted on <a href="https://render.com/">Render</a> and database hosted on <a href="https://www.elephantsql.com/">ElephantSQL</a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Features
-* User authentication and authorization via JWT tokens
-* Search for jobs by keyword or company name
-* View job details, including salary and equity
-* Apply to jobs
-* Personalized homepage
+### Learnings
+Frontend:
+- React component hierarchy design
+- Separation of concerns between logic and UI displays
+- React state and context management
+- Token retrieval via localStorage
+- Building protective routes via React Router
+- Creating a helper API to centralize data requests
+
+Backend:
+- Authentication and authorization with middleware and JWT tokens
+- Protection against SQL injection attacks via parameterized queries
+- Designing RESTful APIs and database schemas
+- Form validation with JSON schemas
+- Test-driven development and coverage
+- Bcrypt hashing
 
 
 ## Component Hierarchy Design
@@ -84,7 +99,7 @@ A job board web application where users can register, log in, manage their profi
 
 
 <!-- GETTING STARTED  -->
-<!--
+
 ## Getting Started
 
 This is an example of how you may give instructions on setting up your project locally.
@@ -117,7 +132,7 @@ _Below is an example of how you can instruct your audience on installing and set
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
--->
+
 
 
 <!-- ACKNOWLEDGMENTS -->
