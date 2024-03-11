@@ -1,70 +1,141 @@
-# Getting Started with Create React App
+<!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
+<a name="readme-top"></a>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
 
-### `npm start`
+<h1 align="center">Jobly 💼 </h1>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+  <p align="center">
+    Centralize your job search experience with a user-friendly platform.
+    <br />
+    <br />
+    <a href="https://jobly.crystaltran.dev/">View Demo</a>
+    ·
+    <a href="https://github.com/crystal-tran/express-jobly">Backend Repo</a>
+    <br />
+    <br />
+     <p>username: <b>guest</b> | demo password: <b>password</b></p>
+    <img src="https://github.com/crystal-tran/personal-portfolio-website/blob/main/static/media/jobly-demo-gif.gif" alt="jobly-demo">
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+   
+  </p>
+</div>
 
-### `npm test`
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#learnings">Learnings</a></li>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#component-hierarchy-design">Component Hierarchy Design</a>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+    </li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<!-- ABOUT THE PROJECT -->
 
-### `npm run build`
+  <h1 align="left">About the Project</h1>
+<!--   <p align="left">
+    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+  </p> -->
+Jobly is a full-stack application where users can register, manage their profile, browse and search hiring companies and jobs, as well as apply to jobs. This project was built in January 2024 during a 4-day sprint at <a href="https://github.com/rithmschool">Rithm School</a>. 
+<br />
+<br />
+Application was built with a React frontend, Express backend, and Postgres database. Express backend implemented with test-driven development (TDD). Frontend and backend hosted on <a href="https://render.com/">Render</a> and database hosted on <a href="https://www.elephantsql.com/">ElephantSQL</a>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Learnings
+Frontend:
+- React component hierarchy design
+- Separation of concerns between logic and UI displays
+- React state and context management
+- Token retrieval via localStorage
+- Building protective routes via React Router
+- Creating a helper API to centralize data requests
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Backend:
+- Authentication and authorization with middleware and JWT tokens
+- Protection against SQL injection attacks via parameterized queries
+- Designing RESTful APIs and database schemas
+- Form validation with JSON schemas
+- Test-driven development and coverage
+- Bcrypt hashing
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Component Hierarchy Design
+![Imgur Image](https://imgur.com/V657tUV.jpg)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Built With
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+* ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+* ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+* ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+* ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
+* ![Fetch](https://img.shields.io/badge/-Fetch%20API-4285F4?logo=webcomponentsdotorg&logoColor=white&style=flat)
+* ![ElephantSQL](https://img.shields.io/badge/-ElephantSQL-336791?logo=elephantsql&logoColor=white&style=flat)
+* ![Render](https://img.shields.io/badge/-Render-333333?logo=render&logoColor=white&style=flat)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<!-- GETTING STARTED  -->
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Getting Started
 
-### Code Splitting
+To get a local copy up and running follow these steps.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. Clone frontend and back repos
+   ```sh
+   git clone https://github.com/crystal-tran/react-jobly-frontend.git
+   git clone https://github.com/crystal-tran/express-jobly-backend.git
+   ```
+2. Create and seed database
+   ```sh
+   createdb jobly
+   cd express-jobly-backend
+   psql jobly < jobly.sql
+   ```
+3. Install backend dependencies and run backend server
+   ```sh
+   cd express-jobly-backend
+   npm install
+   npm start
+   ```
+4. In a separate terminal, install frontend dependencies and run frontend server
+   ```sh
+   cd react-jobly-frontend
+   npm install
+   npm start
+   ```
+5. View on <a href="http://localhost:3000">http://localhost:3000</a>
 
-### Analyzing the Bundle Size
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Authors
+* [Nick Orsi](https://github.com/nickorsi) : Frontend Co-author
+* [Veronica Ni](https://github.com/veronicani) : Backend Co-author
 
-### Making a Progressive Web App
+<!-- ACKNOWLEDGMENTS -->
+## Acknowledgments
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+* [Rithm School](https://github.com/rithmschool)
+* [Best-README-Template](https://github.com/othneildrew/Best-README-Template)
+* [Markdown-Badges](https://github.com/Ileriayo/markdown-badges)
 
-### Advanced Configuration
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
