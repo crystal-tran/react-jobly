@@ -23,20 +23,19 @@ import './Navigation.css';
 
 function Navigation({ logout, user }) {
   return (
-       <nav className="navbar navbar-expand-lg  navbar-dark">
+      <nav className="navbar navbar-expand-lg  navbar-dark">
       <NavLink to="/" className="navbar-brand">Jobly</NavLink>
 
-      <button class="navbar-toggler"
-              type="button"
-              data-toggle="data-bs-toggle"
-              data-target="data-bs-target"
-              aria-controls="navbarNavDropdown"
+      <button className="navbar-toggler"
+              data-toggle="collapse"
+              data-target="#navbar-content"
+              aria-controls="navbar-content"
               aria-expanded="false"
               aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+        <span className="navbar-toggler-icon"></span>
+      </button>
 
-      <div className="collapse navbar-collapse" id="navbarNav">
+      <div className="navbar-collapse collapse " id="navbar-content">
         <ul className="navbar-nav ml-auto">
           {user ? (
             <>

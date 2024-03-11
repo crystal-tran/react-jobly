@@ -20,19 +20,15 @@ import { jwtDecode } from 'jwt-decode';
  */
 
 function App() {
-  const [user, setUser] = useState({
-    userData: null,
+  const [currentUser, setCurrentUser] = useState({
+    data: null,
     isLoading: false,
   });
-  // const [token, setToken] = useState(localStorage.getItem("_token"));
-
-  const [applications, setApplications] = useState([]);
+  const [applicationIds, setApplicationIds] = useState(new Set([]));
   const token = localStorage.getItem("_token");
-  console.log("user:", user, "token", token);
 
   /**Get user data and set userData to userResult
    *  and isLoading to false if token exists */
-
   useEffect(function loadUserInfo() {
     console.log("loadUserInfo");
 
@@ -41,8 +37,8 @@ function App() {
         let { username } = jwtDecode(token)
         JoblyApi.token = token;
         const userResult = await JoblyApi.getUser(username);
-        setUser({
-          userData: userResult,
+        setCurrentUser({
+          data: userResult,
           isLoading: false,
         });
       }
@@ -59,8 +55,8 @@ function App() {
     console.log("loginUser");
     const token = await JoblyApi.loginUser(username, password);
     localStorage.setItem("_token", token);
-    setUser({
-      userData: username,
+    setCurrentUser({
+      data: username,
       isLoading: false,
     });
     // setToken(token);
@@ -80,8 +76,8 @@ function App() {
       lastName,
       email);
     localStorage.setItem("_token", token);
-    setUser({
-      userData: username,
+    setCurrentUser({
+      data: username,
       isLoading: false,
     });
     // setToken(token);
@@ -93,8 +89,8 @@ function App() {
    */
 
   function logoutUser() {
-    setUser({
-      userData: null,
+    setCurrentUser({
+      data: null,
       isLoading: false,
     });
     localStorage.clear();
@@ -107,33 +103,48 @@ function App() {
    */
   async function editProfile({ username, firstName, lastName, email }) {
     const user = await JoblyApi.editUser(username, firstName, lastName, email);
-    setUser({
-      userData: user,
+    setCurrentUser({
+      data: user,
       isLoading: false
     });
   };
 
+  /**hasAppliedToJob function takes in a job id and returns True if job
+   * has been applied for, else False.
+   */
+  function hasAppliedToJob(id) {
+    return applicationIds.has(id);
+  }
+
   /**
-   * applyToJob function
-   * //TODO:
+   * applyToJob function takes in a job id updates user's set of applied jobs
    */
   function applyToJob(id) {
-    console.log("applyToJob");
+    const username = currentUser.username;
+    if(hasAppliedToJob(id)) return;
+    JoblyApi.applyToJob(username, id);
+    setApplicationIds(new Set([...applicationIds, id]))
   };
 
 
-  if (user.isLoading) return <p>Loading...</p>;
-  if (user.userData === null && token){
+  if (currentUser.isLoading) return <p>Loading...</p>;
+  if (currentUser.data === null && token){
     return <p>We are loading...</p>;
   }
 
   return (
     <div className="App">
       <BrowserRouter>
-        <userContext.Provider value={user}>
-          <Navigation logout={logoutUser} user={user.userData} />
+        <userContext.Provider
+          value={{
+            currentUser: currentUser.data,
+            hasAppliedToJob,
+            applyToJob
+          }}
+        >
+          <Navigation logout={logoutUser} user={currentUser.data} />
           <RoutesList
-            user={user.userData}
+            user={currentUser.data}
             login={loginUser}
             register={registerUser}
             editProfile={editProfile}

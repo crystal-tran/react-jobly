@@ -18,14 +18,31 @@ import JoblyApi from '../api/api';
  */
 
 function JobList () {
-  const [jobs, setJobs] = useState({data: null, isLoading: true})
-  const  [term, setTerm]= useState('');
+  const  [term, setSearchTerm]= useState('');
+  const [jobs, setJobList] = useState({
+    data: null,
+    isLoading: true,
+    errors: null
+  });
+
   // console.log("jobs:", jobs, "term:", term);
 
   useEffect(function fetchJobsWhenMounted() {
     async function fetchJobs() {
-      const jobsResult = await JoblyApi.getAllJobs(term);
-      setJobs({ data: jobsResult, isLoading: false });
+      try {
+        const jobsData = await JoblyApi.getJobs(term);
+        setJobList({
+          data: jobsData,
+          isLoading: false,
+          errors: null
+        });
+      } catch (err){
+        setJobList({
+          data: null,
+          isLoading: false,
+          errors: err,
+        });
+      }
     }
     fetchJobs();
   }, [term]);
@@ -35,18 +52,24 @@ function JobList () {
    * and jobs state
    */
   function searchJobs(term){
-    setJobs({ data: null, isLoading: true });
-    setTerm(term);
+    setJobList({ data: null, isLoading: true });
+    setSearchTerm(term);
   }
 
-  if(jobs.isLoading) return <p>Loading... </p>;
+  if(jobs.isLoading){
+    return <p>Loading... </p>
+  } else if (jobs.errors){
+    return <i>There was an error.</i>
+  }
+
+
 
   return (
     <div className='container'>
       <SearchForm search={searchJobs} term={term}/>
-      {jobs.data.length === 0
-      ? <p>Sorry, no results were found!</p>
-      : <JobCardList jobsData={jobs.data}/>
+      {jobs.data.length
+      ? <JobCardList jobsData={jobs.data}/>
+      : <p>Sorry, no results were found!</p>
       }
     </div>
   );

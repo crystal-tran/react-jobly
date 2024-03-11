@@ -78,7 +78,7 @@ class JoblyApi {
    * Returns [{id, title, salary, equity, companyHandle, companyName}, ...]
   */
 
-  static async getAllJobs(term) {
+  static async getJobs(term) {
     let res;
     if (term === "") {
       res = await this.request(`jobs/`);
@@ -149,9 +149,7 @@ class JoblyApi {
   */
 
   static async applyToJob(username, jobId) {
-    const res = await this.request(`users/${username}/jobs/${jobId}`, "POST");
-    console.log("applyToJob response:", res);
-    return res;
+    await this.request(`users/${username}/jobs/${jobId}`, "POST");
   }
 }
 

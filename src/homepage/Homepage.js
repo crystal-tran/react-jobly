@@ -14,15 +14,15 @@ import "./Homepage.css"
 */
 
 function Homepage(){
-  const user = useContext(userContext);
+  const { currentUser } = useContext(userContext);
 
   return(
     <div className="Homepage">
       <h1 className="Homepage-title">Jobly</h1>
-      <h2 >All the jobs in one, convenient place.</h2>
-      { user.userData
+      <h3>All the jobs in one, convenient place.</h3>
+      { currentUser
         ? <p className="Homepage-greeting">
-          Welcome back, {user.userData.firstName} 👋
+          Welcome back, {currentUser.firstName} 👋
           </p>
         : <div>
             <Link to='/login' className="Homepage-btn btn">Log in</Link>
