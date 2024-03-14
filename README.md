@@ -19,6 +19,7 @@
     <br />
     <br />
      <p>username: <b>guest</b> | demo password: <b>password</b></p>
+     <i>Disclaimer: it might take 10-30 sec for the page to fully render</i>
     <img src="https://github.com/crystal-tran/personal-portfolio-website/blob/main/static/media/jobly-demo-gif.gif" alt="jobly-demo">
 
    
